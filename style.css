@@ -1,0 +1,81 @@
+body {
+    background-image: url("world.png");
+    background-size: cover;
+}
+
+h1 {
+    font-family: "Comic Sans MS";
+    text-align: center;
+    color: #F07504;
+}
+
+.square {
+    /*border: 5px solid red;*/
+    text-align: center;
+    width: 30vw;
+    height: 30vw;
+    margin-left: 40%;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    position: relative;
+    margin: 5px;
+    height: 28%;
+    width: 28%;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font: bold;
+}
+
+.card{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: all 1s linear;
+    transform-style:  preserve-3d;
+}
+
+.front, .back{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+}
+
+.front{
+    background: #F5EDE0;
+    z-index: 2;
+    backface-visibility: hidden;
+    font-size: 21px;
+    color: #F07504;
+}
+
+.back{
+    background: #F07504;
+    z-index: 1;
+    transform: rotateY(180deg);
+    font-size: 16px;
+    color: #F5EDE0;
+}
+
+.container:hover .card{
+    transform: rotateY(180deg);
+}
